@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Repuestos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LOGICA.RepuestosController">
+   <children>
+      <TableView fx:id="TablaRepuestos" focusTraversable="false" layoutX="157.0" layoutY="118.0" prefHeight="330.0" prefWidth="501.0">
+        <columns>
+          <TableColumn fx:id="ColCantidad" prefWidth="63.0" text="Cantidad" />
+          <TableColumn fx:id="ColRepuesto" prefWidth="341.0" text="Repuesto" />
+            <TableColumn fx:id="ColValor" prefWidth="95.0" text="Valor" />
+        </columns>
+      </TableView>
+      <TextField fx:id="Cantidad" focusTraversable="false" layoutX="169.0" layoutY="48.0" prefHeight="25.0" prefWidth="61.0" promptText="Cantidad" />
+      <TextField fx:id="Repuesto" focusTraversable="false" layoutX="263.0" layoutY="48.0" promptText="Repuesto" />
+      <TextField fx:id="Valor" focusTraversable="false" layoutX="438.0" layoutY="48.0" prefHeight="25.0" prefWidth="110.0" promptText="Valor" />
+      <Pane layoutY="-6.0" prefHeight="508.0" prefWidth="98.0" style="-fx-background-color: green;">
+         <children>
+            <ImageView fx:id="botonActualizar" fitHeight="52.0" fitWidth="48.0" layoutX="22.0" layoutY="149.0" onMouseClicked="#actualizar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../IMG/girar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelActualizar" layoutX="22.0" layoutY="197.0" onMouseClicked="#actualizar" text="Actualizar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+         </children></Pane>
+      <ImageView fx:id="BotonAgregar" fitHeight="46.0" fitWidth="49.0" layoutX="20.0" layoutY="45.0" onMouseClicked="#agregar_registro" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMG/mas.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Agregar" layoutX="21.0" layoutY="93.0" onMouseClicked="#agregar_registro" text="Agregar" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="67.0" fitWidth="61.0" layoutX="15.0" layoutY="404.0" onMouseClicked="#Volver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMG/atras.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="27.0" layoutY="460.0" onMouseClicked="#Volver" text="Volver" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="botonEliminar" fitHeight="46.0" fitWidth="46.0" layoutX="28.0" layoutY="235.0" onMouseClicked="#eliminar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMG/eliminar.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="LabelEliminar" layoutX="24.0" layoutY="283.0" onMouseClicked="#eliminar" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
