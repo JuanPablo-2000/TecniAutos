@@ -22,17 +22,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Familia-Botero
+ * @author Juan Pablo
  */
 @Entity
 @Table(name = "descripcion")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Descripcion.findAll", query = "SELECT d FROM Descripcion d")
-    , @NamedQuery(name = "Descripcion.findByRepuesto", query = "SELECT d FROM Descripcion d WHERE d.repuesto = :repuesto")
-    , @NamedQuery(name = "Descripcion.findByIdrepuesto", query = "SELECT d FROM Descripcion d WHERE d.idrepuesto = :idrepuesto")
-    , @NamedQuery(name = "Descripcion.findByValor", query = "SELECT d FROM Descripcion d WHERE d.valor = :valor")
-    , @NamedQuery(name = "Descripcion.findByCantidad", query = "SELECT d FROM Descripcion d WHERE d.cantidad = :cantidad")})
+    @NamedQuery(name = "Descripcion.findAll", query = "SELECT d FROM Descripcion d"),
+    @NamedQuery(name = "Descripcion.findByRepuesto", query = "SELECT d FROM Descripcion d WHERE d.repuesto = :repuesto"),
+    @NamedQuery(name = "Descripcion.findByIdrepuesto", query = "SELECT d FROM Descripcion d WHERE d.idrepuesto = :idrepuesto"),
+    @NamedQuery(name = "Descripcion.findByValor", query = "SELECT d FROM Descripcion d WHERE d.valor = :valor"),
+    @NamedQuery(name = "Descripcion.findByCantidad", query = "SELECT d FROM Descripcion d WHERE d.cantidad = :cantidad")})
 public class Descripcion implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -27,22 +27,24 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Familia-Botero
+ * @author Juan Pablo
  */
 @Entity
 @Table(name = "registro")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Registro.findAll", query = "SELECT r FROM Registro r")
-    , @NamedQuery(name = "Registro.findByIdregistro", query = "SELECT r FROM Registro r WHERE r.idregistro = :idregistro")
-    , @NamedQuery(name = "Registro.findByMarca", query = "SELECT r FROM Registro r WHERE r.marca = :marca")
-    , @NamedQuery(name = "Registro.findByPlaca", query = "SELECT r FROM Registro r WHERE r.placa = :placa")
-    , @NamedQuery(name = "Registro.findByTecnico", query = "SELECT r FROM Registro r WHERE r.tecnico = :tecnico")
-    , @NamedQuery(name = "Registro.findByCosto", query = "SELECT r FROM Registro r WHERE r.costo = :costo")
-    , @NamedQuery(name = "Registro.findByFecha", query = "SELECT r FROM Registro r WHERE r.fecha = :fecha")
-    , @NamedQuery(name = "Registro.findByCliente", query = "SELECT r FROM Registro r WHERE r.cliente = :cliente")
-    , @NamedQuery(name = "Registro.findByCedula", query = "SELECT r FROM Registro r WHERE r.cedula = :cedula")
-    , @NamedQuery(name = "Registro.findByKilometraje", query = "SELECT r FROM Registro r WHERE r.kilometraje = :kilometraje")})
+    @NamedQuery(name = "Registro.findAll", query = "SELECT r FROM Registro r"),
+    @NamedQuery(name = "Registro.findByIdregistro", query = "SELECT r FROM Registro r WHERE r.idregistro = :idregistro"),
+    @NamedQuery(name = "Registro.findByMarca", query = "SELECT r FROM Registro r WHERE r.marca = :marca"),
+    @NamedQuery(name = "Registro.findByPlaca", query = "SELECT r FROM Registro r WHERE r.placa = :placa"),
+    @NamedQuery(name = "Registro.findByTecnico", query = "SELECT r FROM Registro r WHERE r.tecnico = :tecnico"),
+    @NamedQuery(name = "Registro.findByCosto", query = "SELECT r FROM Registro r WHERE r.costo = :costo"),
+    @NamedQuery(name = "Registro.findByFecha", query = "SELECT r FROM Registro r WHERE r.fecha = :fecha"),
+    @NamedQuery(name = "Registro.findByCliente", query = "SELECT r FROM Registro r WHERE r.cliente = :cliente"),
+    @NamedQuery(name = "Registro.findByCedula", query = "SELECT r FROM Registro r WHERE r.cedula = :cedula"),
+    @NamedQuery(name = "Registro.findByKilometraje", query = "SELECT r FROM Registro r WHERE r.kilometraje = :kilometraje"),
+    @NamedQuery(name = "Registro.findByDireccion", query = "SELECT r FROM Registro r WHERE r.direccion = :direccion"),
+    @NamedQuery(name = "Registro.findByTelefono", query = "SELECT r FROM Registro r WHERE r.telefono = :telefono")})
 public class Registro implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -68,6 +70,10 @@ public class Registro implements Serializable {
     private String cedula;
     @Column(name = "kilometraje")
     private String kilometraje;
+    @Column(name = "direccion")
+    private String direccion;
+    @Column(name = "telefono")
+    private String telefono;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idregistro")
     private List<Descripcion> descripcionList;
 
@@ -148,6 +154,22 @@ public class Registro implements Serializable {
 
     public void setKilometraje(String kilometraje) {
         this.kilometraje = kilometraje;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     @XmlTransient

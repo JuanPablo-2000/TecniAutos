@@ -57,13 +57,17 @@ public class BusquedaController implements Initializable {
     private TextField placa;
     @FXML
     private TextField cliente;
+    @FXML
+    private TableColumn<?, ?> EtiquetaDireccion;
+    @FXML
+    private TableColumn<?, ?> EtiquetaTelefono;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         if(placa.getText().isEmpty()){
-            System.out.println("Entre");
+            
             EtiquetaFecha.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
             EtiquetaCliente.setCellValueFactory(new PropertyValueFactory<>("Cliente"));
             EtiquetaCedula.setCellValueFactory(new PropertyValueFactory<>("Cedula"));
@@ -71,6 +75,8 @@ public class BusquedaController implements Initializable {
             EtiquetaMarca.setCellValueFactory(new PropertyValueFactory<>("Marca"));
             EtiquetaKilometraje.setCellValueFactory(new PropertyValueFactory<>("Kilometraje"));
             EtiquetaTecnico.setCellValueFactory(new PropertyValueFactory<>("Tecnico"));
+            EtiquetaDireccion.setCellValueFactory(new PropertyValueFactory<>("Direccion"));
+            EtiquetaTelefono.setCellValueFactory(new PropertyValueFactory<>("Telefono"));
             EtiquetaCosto.setCellValueFactory(new PropertyValueFactory<>("Costo"));
         
             Query valida = em.createNamedQuery("Registro.findAll");
@@ -95,6 +101,7 @@ public class BusquedaController implements Initializable {
             public void handle(MouseEvent event) {
                 if(event.getClickCount() > 1){
                     int idregistro = infoRegistro.getSelectionModel().getSelectedItem().getIdregistro();
+                    
                     admin.Crud(idregistro);
                     admin.setRegistro(infoRegistro.getSelectionModel().getSelectedItem());
                     
@@ -127,8 +134,10 @@ public class BusquedaController implements Initializable {
             EtiquetaMarca.setCellValueFactory(new PropertyValueFactory<>("Marca"));
             EtiquetaKilometraje.setCellValueFactory(new PropertyValueFactory<>("Kilometraje"));
             EtiquetaTecnico.setCellValueFactory(new PropertyValueFactory<>("Tecnico"));
+            EtiquetaDireccion.setCellValueFactory(new PropertyValueFactory<>("Direccion"));
+            EtiquetaTelefono.setCellValueFactory(new PropertyValueFactory<>("Telefono"));
             EtiquetaCosto.setCellValueFactory(new PropertyValueFactory<>("Costo"));
-            
+                                    
             Calendar fecha = Calendar.getInstance();
             
             String query = "SELECT * FROM registro WHERE placa LIKE '"+placa.getText().toUpperCase()+"%' Or cliente LIKE '"+placa.getText()+"%';";

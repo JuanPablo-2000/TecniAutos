@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LOGICA.BusquedaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1249.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LOGICA.BusquedaController">
    <children>
-      <TextField fx:id="placa" focusTraversable="false" layoutX="773.0" layoutY="22.0" onKeyPressed="#buscarRegistro" onKeyReleased="#buscarRegistro" prefHeight="17.0" prefWidth="149.0" promptText="Búsqueda" />
+      <TextField fx:id="placa" focusTraversable="false" layoutX="1003.0" layoutY="22.0" onKeyPressed="#buscarRegistro" onKeyReleased="#buscarRegistro" prefHeight="17.0" prefWidth="149.0" promptText="Búsqueda" />
       <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="64.0" layoutY="9.0" onMouseClicked="#Volver" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../IMG/anterior.png" />
@@ -21,7 +21,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <TableView fx:id="infoRegistro" focusTraversable="false" layoutX="37.0" layoutY="77.0" prefHeight="537.0" prefWidth="929.0">
+      <TableView fx:id="infoRegistro" focusTraversable="false" layoutX="37.0" layoutY="79.0" prefHeight="537.0" prefWidth="1175.0">
          <columns>
             <TableColumn fx:id="EtiquetaFecha" prefWidth="138.0" text="Fecha" />
             <TableColumn fx:id="EtiquetaCliente" prefWidth="114.0" text="Cliente" />
@@ -30,9 +30,11 @@
             <TableColumn fx:id="EtiquetaMarca" prefWidth="124.0" text="Marca" />
             <TableColumn fx:id="EtiquetaKilometraje" prefWidth="99.0" text="Kilometraje" />
             <TableColumn fx:id="EtiquetaTecnico" minWidth="0.0" prefWidth="117.0" text="Tecnico Asignado" />
+            <TableColumn fx:id="EtiquetaDireccion" minWidth="0.0" prefWidth="131.0" text="Dirección" />
+            <TableColumn fx:id="EtiquetaTelefono" minWidth="0.0" prefWidth="115.0" text="Telefono" />
             <TableColumn fx:id="EtiquetaCosto" minWidth="0.0" prefWidth="123.0" text="Costo Final" />
          </columns>
       </TableView>
-      <TextField fx:id="cliente" layoutX="610.0" layoutY="22.0" onKeyPressed="#busquedaCliente" onKeyReleased="#busquedaCliente" promptText="Nombre Cliente" />
+      <TextField fx:id="cliente" layoutX="840.0" layoutY="22.0" onKeyPressed="#busquedaCliente" onKeyReleased="#busquedaCliente" promptText="Nombre Cliente" />
    </children>
 </AnchorPane>

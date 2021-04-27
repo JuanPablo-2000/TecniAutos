@@ -38,10 +38,10 @@ public class Arranque extends Application {
         stage3 = new Stage();
         
         stage1.setTitle("Registro TecniAutos");
-        stage2.setTitle("Administrarción de Registros TecniAutos");
+        stage2.setTitle("Administración de Registros TecniAutos");
         stage3.setTitle("Agregar Repuestos");
         
-        Image icon = new Image("/IMG/coche.png");
+        Image icon = new Image("/IMG/TecniAutos.png");
         
         stage1.getIcons().add(icon);
         stage2.getIcons().add(icon);
@@ -85,6 +85,7 @@ public class Arranque extends Application {
             stage2.setScene(escena);
             
             CrudController control = loader.getController();
+            System.out.println(idRegistro);
             control.tomarBusqueda(idRegistro);
             cerrarVentana("stage1");
             control.setAdmin(this);
