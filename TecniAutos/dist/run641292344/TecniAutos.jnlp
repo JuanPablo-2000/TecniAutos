@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="TecniAutos.jnlp">
+  <information>
+    <title>TecniAutos</title>
+    <vendor>Juan</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="TecniAutos.jar" size="318897" download="eager" />
+    <jar href="lib\itextpdf-5.5.9.jar" size="2287148" download="eager" />
+    <jar href="lib\javax.persistence-2.2.1.jar" size="203426" download="eager" />
+    <jar href="lib\org.eclipse.persistence.antlr-2.7.9.jar" size="147580" download="eager" />
+    <jar href="lib\org.eclipse.persistence.asm-9.1.0.jar" size="322036" download="eager" />
+    <jar href="lib\org.eclipse.persistence.core-2.7.9.jar" size="5248126" download="eager" />
+    <jar href="lib\org.eclipse.persistence.jpa-2.7.9.jar" size="1412821" download="eager" />
+    <jar href="lib\org.eclipse.persistence.jpa.jpql-2.7.9.jar" size="1333325" download="eager" />
+    <jar href="lib\org.eclipse.persistence.moxy-2.7.9.jar" size="621241" download="eager" />
+    <jar href="lib\postgresql-42.2.16.jar" size="1002883" download="eager" />
+    <jar href="lib\postgresql-42.2.18.jar" size="1004719" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="LOGICA.Arranque"  name="TecniAutos" />
+  <update check="always"/>
+</jnlp>

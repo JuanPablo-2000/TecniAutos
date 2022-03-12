@@ -486,8 +486,8 @@ public class CrudController implements Initializable {
             Encabezado.setWidths(ColumnaEncabezado);
             Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
             
-            PdfPCell dato1 = new PdfPCell(new Phrase("Señor(a): "+ucFirst(cliente.getText().toLowerCase()), parrafo));
-            PdfPCell dato2 = new PdfPCell(new Phrase("C.C /Nit : "+cedula.getText(), parrafo));
+            PdfPCell dato1 = new PdfPCell(new Phrase("Señor(a): "+ ucFirst(cliente.getText().toLowerCase()), parrafo));
+            PdfPCell dato2 = new PdfPCell(new Phrase("C.C /Nit : "+ convertirDatos(cedula.getText()), parrafo));
             PdfPCell dato3 = new PdfPCell(new Phrase("Fecha : "+fecha.getValue().toString(), parrafo));
             
             dato1.setBorderColor(BaseColor.BLACK);
@@ -521,17 +521,15 @@ public class CrudController implements Initializable {
             
             PdfPCell dato4 = new PdfPCell(new Phrase("Dirección : "+ucFirst(direccion.getText()), parrafo));
             PdfPCell dato5 = new PdfPCell(new Phrase("Empresa : ", parrafo));
-            PdfPCell dato6 = new PdfPCell(new Phrase("Telefono : "+telefono.getText(), parrafo));
+            PdfPCell dato6 = new PdfPCell(new Phrase("Telefono : "+ convertirDatos(telefono.getText()), parrafo));
             
             dato4.setBorderColor(BaseColor.BLACK);
             dato5.setBorderColor(BaseColor.BLACK);
             dato6.setBorderColor(BaseColor.BLACK);
             
             dato4.setBorderWidthLeft(1f);
-            
             dato6.setBorderWidthLeft(1f);
             dato6.setBorderWidthRight(1f);
-            
             
             Encabezado2.addCell(dato4);
             Encabezado2.addCell(dato5);
@@ -546,7 +544,7 @@ public class CrudController implements Initializable {
             
             PdfPCell dato7 = new PdfPCell(new Phrase("Marca : "+ucFirst(marcaVehiculo.getText().toLowerCase()), parrafo));
             PdfPCell dato8 = new PdfPCell(new Phrase("Placa : "+placaVehiculo.getText(), parrafo));
-            PdfPCell dato9 = new PdfPCell(new Phrase("Km : "+formatea.format(Double.parseDouble(kilometraje.getText())), parrafo));
+            PdfPCell dato9 = new PdfPCell(new Phrase("Km : "+formatea.format(Double.parseDouble(convertirDatos(kilometraje.getText()))), parrafo));
             
             dato7.setBorderColor(BaseColor.BLACK);
             dato8.setBorderColor(BaseColor.BLACK);
@@ -659,4 +657,22 @@ public class CrudController implements Initializable {
         return Character.toUpperCase(str.charAt(0)) + str.substring(1); 
     }
 }
+    
+    public static String convertirDatos(String dato) {
+        if (dato.contains("CEL")) {
+            return dato.replace("CEL.", "");
+        } else if (dato.contains("TEL")) {
+            return dato.replace("TEL.", "");
+        } else if (dato.contains("KM")) {
+            return dato.replace("KM.", "");
+        } else if (dato.contains("DIR")) {
+            return dato.replace("DIR.", "");
+        } else if (dato.contains("CC")) {
+            return dato.replace("CC.", "");
+        } else if (dato.contains("NIT")) {
+            return dato.replace("NIT.", "");
+        }
+        
+        return dato;
+    }
 }
