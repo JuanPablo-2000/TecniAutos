@@ -472,7 +472,7 @@ public class CrudController implements Initializable {
             PdfWriter.getInstance(doc, archivo);
             doc.open();
             
-            Image img = Image.getInstance("src\\IMG\\TecniAutos.png");
+            //Image img = Image.getInstance("src\\IMG\\TecniAutos.png");
             
             DecimalFormat formatea = new DecimalFormat("###,###.###");
             
@@ -644,7 +644,7 @@ public class CrudController implements Initializable {
             JOptionPane.showMessageDialog(null, "Se ha Generado Correctamente el Pdf.");
             
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null , "!!!  Error !!!");
+            JOptionPane.showMessageDialog(null , "!!!  Error !!!" + e.getMessage());
         }
          
        
